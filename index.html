@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>מפת ניצנים</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%23214a3c'/%3E%3Cpath d='M20 65 L40 35 L55 55 L70 30 L82 65 Z' fill='%23fff'/%3E%3C/svg%3E">
+<style>
+  :root {
+    --bg: #f4f2ee;
+    --ink: #1c1c1c;
+    --muted: #5c5c5c;
+    --accent: #214a3c;
+    --border: #d8d4cc;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #15181a;
+      --ink: #f0efec;
+      --muted: #a7a7a7;
+      --accent: #7fb3a0;
+      --border: #33383b;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, "Segoe UI", Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  header {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  h1 {
+    font-size: 1.2rem;
+    margin: 0;
+    font-weight: 600;
+  }
+  a.download {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.95rem;
+    border: 1px solid var(--accent);
+    padding: 6px 14px;
+    white-space: nowrap;
+  }
+  a.download:hover { text-decoration: underline; }
+  .viewer-wrap {
+    flex: 1;
+    display: flex;
+  }
+  iframe {
+    flex: 1;
+    width: 100%;
+    border: none;
+    min-height: 80vh;
+  }
+  .fallback {
+    padding: 24px 20px;
+    color: var(--muted);
+    text-align: center;
+  }
+  .fallback a { color: var(--accent); }
+  footer {
+    padding: 10px 20px;
+    font-size: 0.8rem;
+    color: var(--muted);
+    text-align: center;
+    border-top: 1px solid var(--border);
+  }
+</style>
+</head>
+<body>
+  <header>
+    <h1>מפת ניצנים</h1>
+    <a class="download" href="MAP2026-07-02b.pdf" download>הורדת הקובץ</a>
+  </header>
+  <div class="viewer-wrap">
+    <iframe src="MAP2026-07-02b.pdf" title="מפת ניצנים">
+      <p class="fallback">
+        הדפדפן שלך אינו תומך בהצגת PDF מוטמע.
+        <a href="MAP2026-07-02b.pdf">לחצו כאן לפתיחת הקובץ</a>.
+      </p>
+    </iframe>
+  </div>
+  <footer>מפת ניצנים · לצפייה בלבד</footer>
+</body>
+</html>
